@@ -1,6 +1,8 @@
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
+require("dotenv").config();
+
 
 // Create Express app
 const app = express();
@@ -9,11 +11,12 @@ app.use(express.json()); // parse JSON
 
 // MySQL connection
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Prash@555", // replace with your root password
-  database: "temple_db",           // make sure this DB exists
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
+
 
 // Connect to MySQL
 db.connect((err) => {
@@ -122,7 +125,8 @@ app.post("/api/seva", (req, res) => {
 });
 
 // Start server
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

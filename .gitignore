@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+temple-website/.gitignore
+backend/.env
+node_modules
+.env
