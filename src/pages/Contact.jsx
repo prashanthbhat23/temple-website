@@ -1,65 +1,89 @@
+import React, { useState } from "react";
+import axios from "axios";
+
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("http://localhost:5000/api/contact", formData);
+      alert(res.data.message);
+      setFormData({ name: "", mobile: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      alert("Error sending message. Please try again later.");
+    }
+  };
+
+  const inputStyle = {
+    width: "100%",
+    padding: "10px",
+    marginTop: "5px",
+    marginBottom: "15px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+    fontSize: "14px",
+  };
+
+  const buttonStyle = {
+    padding: "10px 20px",
+    backgroundColor: "#6b1d1d",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+    fontWeight: "bold",
+  };
+
   return (
-    <div>
-      <h1>Contact Us</h1>
+    <div style={{ maxWidth: "600px", margin: "2rem auto", padding: "1.5rem" }}>
+      <h1 style={{ textAlign: "center", color: "#6b1d1d" }}>Contact Us</h1>
 
-      <p>
-        For any queries regarding poojas, sevas, hall booking or donations,
-        please contact the temple office.
-      </p>
+      <form onSubmit={handleSubmit}>
+        <label>Your Name</label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          style={inputStyle}
+          required
+        />
 
-      <h3>Temple Address</h3>
-      <p>
-        [Your Temple Name] <br />
-        [Temple Area / Village] <br />
-        [District, State]
-      </p>
+        <label>Mobile Number</label>
+        <input
+          type="tel"
+          name="mobile"
+          value={formData.mobile}
+          onChange={handleChange}
+          style={inputStyle}
+          required
+        />
 
-      <h3>Phone</h3>
-      <p>
-        +91 XXXXXXXXXX
-      </p>
+        <label>Your Message</label>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+          rows="4"
+          style={inputStyle}
+          required
+        ></textarea>
 
-      <h3>Email</h3>
-      <p>
-        temple@email.com
-      </p>
-
-      <h3>Send a Message</h3>
-
-      <form>
-        <div>
-          <label>Your Name</label>
-          <br />
-          <input type="text" placeholder="Enter your name" />
-        </div>
-
-        <br />
-
-        <div>
-          <label>Mobile Number</label>
-          <br />
-          <input type="tel" placeholder="Enter mobile number" />
-        </div>
-
-        <br />
-
-        <div>
-          <label>Your Message</label>
-          <br />
-          <textarea rows="4" placeholder="Write your message"></textarea>
-        </div>
-
-        <br />
-
-        <button type="submit">Send Message</button>
+        <button type="submit" style={buttonStyle}>
+          Send Message
+        </button>
       </form>
-
-      <p>
-        <small>
-          * Temple office will respond during working hours.
-        </small>
-      </p>
     </div>
   );
 }

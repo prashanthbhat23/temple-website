@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 function Footer() {
   const footerStyle = {
@@ -23,61 +23,28 @@ function Footer() {
     fontWeight: "bold",
   };
 
-  const iconRowStyle = {
-    display: "flex",
-    justifyContent: "center",
-    gap: "20px",
-    margin: "12px 0",
-    fontSize: "22px",
-  };
-
   const iconStyle = {
+    margin: "0 5px",
     color: "#6b1d1d",
-    cursor: "pointer",
+    fontSize: "20px",
   };
 
   return (
     <footer style={footerStyle}>
       <div style={titleStyle}>Shree Mahalingeshwara Temple Padyana</div>
-
       <p>Karopady / 574279, Dakshina Kannada, Karnataka</p>
-
       <p>Contact: +91 XXXXXXXXXX</p>
-
-      {/* Social Media Icons */}
-      <div style={iconRowStyle}>
-        <a
-          href="https://facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaFacebook style={iconStyle} />
-        </a>
-
-        <a
-          href="https://youtube.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaYoutube style={iconStyle} />
-        </a>
-
-        <a
-          href="https://instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FaInstagram style={iconStyle} />
-        </a>
+      <div>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" style={iconStyle}><FaFacebook /></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" style={iconStyle}><FaInstagram /></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" style={iconStyle}><FaYoutube /></a>
       </div>
-
       <p>
         © {new Date().getFullYear()} Padyana Temple. All rights reserved.
       </p>
-
       <p>
         <small>
-          Designed with devotion 🙏 by{" "}
+          Designed with devotion 🙏 by {" "}
           <a
             href="https://prashsprofile.netlify.app/"
             target="_blank"
