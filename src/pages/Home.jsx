@@ -68,9 +68,9 @@ function Home() {
         <h2>📢 Temple Notices & Announcements</h2>
         <div style={noticeCard}>
           <ul style={{ listStyle: "none", padding: 0 }}>
-            <li>🛕 <strong>Maha Shivaratri</strong> – Special Abhisheka on <strong>8th March</strong></li>
-            <li>🔔 <strong>Monthly Pradosha Pooja</strong> – Every 13th day</li>
-            <li>🎉 <strong>Temple Annual Festival</strong> – April 2026</li>
+            <li>🛕 <strong>Maha Shivaratri</strong> – Special Abhisheka on <strong>15th February</strong></li>
+            <li>🔔 <strong>Bhrahma Kalashotsava</strong> –30th March to 7th April,2026</li>
+            <li>🎉 <strong>Navaratri</strong> – Octobar 2026</li>
             <li>🙏 Devotees can book Sevas online</li>
           </ul>
         </div>
@@ -87,13 +87,13 @@ function Home() {
       {/* Special Sevas */}
       <section style={sectionStyle}>
         <h2>Special Sevas</h2>
-        <p>Abhisheka, Archana, Rudrabhisheka, Sahasranama Pooja</p>
+        <p>Navaratri Pooje, Shani Pooje, Shree Chakra Pooje , Rudrabhisheka, Shashwatha Pooja</p>
       </section>
 
       {/* Festivals */}
       <section style={sectionStyle}>
         <h2>Festivals Celebrated</h2>
-        <p>Maha Shivaratri, Annual Jatra Mahotsava, Kartika Masa special poojas conducted with great devotion.</p>
+        <p>Maha Shivaratri, Annual Jatra Mahotsava,Navaratri special poojas conducted with great devotion.</p>
       </section>
 
       {/* Quick Links */}

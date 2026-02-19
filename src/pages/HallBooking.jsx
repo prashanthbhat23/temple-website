@@ -82,8 +82,8 @@ function HallBooking() {
           <option value="">Select</option>
           <option>Marriage</option>
           <option>Upanayana</option>
-          <option>Naming Ceremony</option>
-          <option>Pooja / Homam</option>
+          <option>Vadhu Gruha Pravesha</option>
+          <option>Pooje / Havana</option>
           <option>Other Event</option>
         </select>
 
